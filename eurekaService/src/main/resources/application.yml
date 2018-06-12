@@ -1,0 +1,43 @@
+spring:
+  profiles: default
+server:
+  port: 8030
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+    
+#---
+#spring:
+#  profiles: primary
+#server:
+#  port: 8031
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8032/eureka/,http://localhost:8033/eureka/
+#
+#---
+#spring:
+#  profiles: secondary
+#server:
+#  port: 8032
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8033/eureka/,http://localhost:8031/eureka/
+#
+#---
+#spring:
+#  profiles: tertiary
+#server:
+#  port: 8033
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8031/eureka/,http://localhost:8032/eureka/
+      
